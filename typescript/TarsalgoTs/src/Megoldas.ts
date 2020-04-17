@@ -1,0 +1,41 @@
+import fs from "fs";
+import Tars from './tarsalgo';
+import { resolve } from 'dns';
+import { cpus } from 'os';
+export default class Megoldas {
+    private Tarsak: Tars[] = [];
+    constructor(forrás: string) {
+        fs.readFileSync(forrás)
+            .toString()
+            .split("\n")
+            .forEach(i => {
+                const aktSor = i.trim();
+                if (aktSor.length > 0) this.Tarsak.push(new Tars(aktSor));
+            });
+    }
+    public get ElsoId(): string {
+        let ElsoId = "";
+        for (let i = 0; i <this.Tarsak.length; i++) {
+            if(this.Tarsak[i].GetOra == 9 && this.Tarsak[i].GetPerc == 1) ElsoId = this.Tarsak[i].GetKibe;
+        }
+        return ElsoId.toString();
+    }
+    public get UtolsoId(): string {
+        let UtoloId="";
+        for(let i = 0; i <this.Tarsak.length; i++) {
+            if(this.Tarsak[i].GetOra==14 && this.Tarsak[i].GetPerc==59) UtoloId = this.Tarsak[i].GetKibe;
+        }
+        return UtoloId.toString();
+    }
+    public get LegtobbBent(): string{
+        let LegtobbBent = "";
+        let count=0;
+        for(let i = 0; i <this.Tarsak.length; i++){
+            if(this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 35)
+            {
+                count++;
+            }
+        }
+        return count.toString();
+    }
+}

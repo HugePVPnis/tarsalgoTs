@@ -1,0 +1,59 @@
+﻿import fs from "fs";
+import http from "http";
+import url from "url";
+import Megoldas from "./Megoldas"
+
+export default class Content {
+    public content(req: http.IncomingMessage, res: http.ServerResponse): void {
+        // favicon.ico kérés kiszolgálása:
+        if (req.url === "/favicon.ico") {
+            res.writeHead(200, { "Content-Type": "image/x-icon" });
+            fs.createReadStream("favicon.ico").pipe(res);
+            return;
+        }
+        // Weboldal inicializálása + head rész:
+        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        res.write("<!DOCTYPE html>");
+        res.write("<html lang='hu'>");
+        res.write("<head>");
+        res.write("<style>input, pre {font-family:monospace; font-size:1em; font-weight:bold;}</style>");
+        res.write("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+        res.write("<title> Társalgó</title>");
+        res.write("</head>");
+        res.write("<body><form><pre>");
+        // 1. Olvassa be és tárolja el az ajto.txt fájl tartalmát!
+        const megold: Megoldas = new Megoldas("ajto.txt");
+
+        //2. Írja a képernyőre annak a személynek az azonosítóját, aki a vizsgált időszakon belül először
+        //lépett be az ajtón, és azét, aki utoljára távozott a megfigyelési időszakban! 
+        res.write("2. feladat:");
+        res.write(`<p>Az első belépő: \t${megold.ElsoId}</p>`);
+        res.write(`<p>Az utolsó kilépő: \t${megold.UtolsoId}</p>`);
+
+       // 3. Határozza meg a fájlban szereplő személyek közül, ki hányszor haladt át a társalgó ajtaján!
+       // A meghatározott értékeket azonosító szerint növekvő sorrendben írja az athaladas.txt
+       // fájlba! Soronként egy személy azonosítója, és tőle egy szóközzel elválasztva az áthaladások
+       // száma szerepeljen! 
+
+       res.write("3. feladat:");
+      // 4. Írja a képernyőre azon személyek azonosítóját, akik a vizsgált időszak végén a társalgóban
+      // tartózkodtak! 
+
+      res.write("4. feladat:");
+      
+        //  5. Hányan voltak legtöbben egyszerre a társalgóban? Írjon a képernyőre egy olyan időpontot
+        //  (óra:perc), amikor a legtöbben voltak bent! 
+
+        res.write("5. feladat:");
+        res.write(`<p>\t${megold.LegtobbBent}</p>`);
+       
+
+
+
+
+
+
+        res.write("</body></html>");
+        res.end();
+    }
+}

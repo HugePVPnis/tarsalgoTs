@@ -1,0 +1,1 @@
+VS Code + TypeScript + Node.js + 2018.05.14. informatika_emelt_Tarsalgo + GitHub + Heroku

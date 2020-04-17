@@ -1,0 +1,7 @@
+div.container {
+    max-width: 35rem;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
