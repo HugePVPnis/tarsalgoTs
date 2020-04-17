@@ -1,7 +1,5 @@
 import fs from "fs";
-import Tars from './tarsalgo';
-import { resolve } from 'dns';
-import { cpus } from 'os';
+import Tars from "./tarsalgo";
 export default class Megoldas {
     private Tarsak: Tars[] = [];
     constructor(forrás: string) {
@@ -15,24 +13,22 @@ export default class Megoldas {
     }
     public get ElsoId(): string {
         let ElsoId = "";
-        for (let i = 0; i <this.Tarsak.length; i++) {
-            if(this.Tarsak[i].GetOra == 9 && this.Tarsak[i].GetPerc == 1) ElsoId = this.Tarsak[i].GetKibe;
+        for (let i = 0; i < this.Tarsak.length; i++) {
+            if (this.Tarsak[i].GetOra == 9 && this.Tarsak[i].GetPerc == 1) ElsoId = this.Tarsak[i].GetKibe;
         }
         return ElsoId.toString();
     }
     public get UtolsoId(): string {
-        let UtoloId="";
-        for(let i = 0; i <this.Tarsak.length; i++) {
-            if(this.Tarsak[i].GetOra==14 && this.Tarsak[i].GetPerc==59) UtoloId = this.Tarsak[i].GetKibe;
+        let UtoloId = "";
+        for (let i = 0; i < this.Tarsak.length; i++) {
+            if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 59) UtoloId = this.Tarsak[i].GetKibe;
         }
         return UtoloId.toString();
     }
-    public get LegtobbBent(): string{
-        let LegtobbBent = "";
-        let count=0;
-        for(let i = 0; i <this.Tarsak.length; i++){
-            if(this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 35)
-            {
+    public get LegtobbBent(): string {
+        let count = 0;
+        for (let i = 0; i < this.Tarsak.length; i++) {
+            if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 35) {
                 count++;
             }
         }

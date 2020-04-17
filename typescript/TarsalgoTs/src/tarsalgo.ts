@@ -3,8 +3,8 @@ export default class Tars {
     private perc: number;
     private id: number;
     private kibe: string;
-    constructor(sor:string){
-        const m:string[] = sor.split(" ");
+    constructor(sor: string) {
+        const m: string[] = sor.split(" ");
         this.ora = parseInt(m[0]);
         this.perc = parseInt(m[1]);
         this.id = parseInt(m[2]);
@@ -16,11 +16,10 @@ export default class Tars {
     public get GetPerc(): number {
         return this.perc;
     }
-    public get GetId():number {
+    public get GetId(): number {
         return this.id;
     }
-    public get GetKibe():string {
+    public get GetKibe(): string {
         return this.kibe;
     }
 }
-
