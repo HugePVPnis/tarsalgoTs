@@ -40,12 +40,13 @@ export default class Content {
         // tartózkodtak!
 
         res.write("4. feladat:");
+        res.write(`<p>\t${megold.Azonos} voltak bent ebben az időben.</p>`);
 
         //  5. Hányan voltak legtöbben egyszerre a társalgóban? Írjon a képernyőre egy olyan időpontot
         //  (óra:perc), amikor a legtöbben voltak bent!
 
         res.write("5. feladat:");
-        res.write(`<p>\t${megold.LegtobbBent}</p>`);
+        res.write(`<p>\t${megold.LegtobbBent} voltak a legtöbben bent.</p>`);
 
         res.write("</body></html>");
         res.end();

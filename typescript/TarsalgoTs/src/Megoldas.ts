@@ -34,4 +34,12 @@ export default class Megoldas {
         }
         return count.toString();
     }
+    public get Azonos(): number {
+        for (let i = 0; i < this.Tarsak.length; i++) {
+            if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 35) {
+                i = this.Tarsak.GetId;
+            }
+        }
+        return this.Tarsak.GetId;
+    }
 }
