@@ -1,7 +1,7 @@
 ﻿import fs from "fs";
 import http from "http";
 import url from "url";
-import Megoldas from "./Megoldas"
+import Megoldas from "./Megoldas";
 
 export default class Content {
     public content(req: http.IncomingMessage, res: http.ServerResponse): void {
@@ -25,33 +25,27 @@ export default class Content {
         const megold: Megoldas = new Megoldas("ajto.txt");
 
         //2. Írja a képernyőre annak a személynek az azonosítóját, aki a vizsgált időszakon belül először
-        //lépett be az ajtón, és azét, aki utoljára távozott a megfigyelési időszakban! 
+        //lépett be az ajtón, és azét, aki utoljára távozott a megfigyelési időszakban!
         res.write("2. feladat:");
         res.write(`<p>Az első belépő: \t${megold.ElsoId}</p>`);
         res.write(`<p>Az utolsó kilépő: \t${megold.UtolsoId}</p>`);
 
-       // 3. Határozza meg a fájlban szereplő személyek közül, ki hányszor haladt át a társalgó ajtaján!
-       // A meghatározott értékeket azonosító szerint növekvő sorrendben írja az athaladas.txt
-       // fájlba! Soronként egy személy azonosítója, és tőle egy szóközzel elválasztva az áthaladások
-       // száma szerepeljen! 
+        // 3. Határozza meg a fájlban szereplő személyek közül, ki hányszor haladt át a társalgó ajtaján!
+        // A meghatározott értékeket azonosító szerint növekvő sorrendben írja az athaladas.txt
+        // fájlba! Soronként egy személy azonosítója, és tőle egy szóközzel elválasztva az áthaladások
+        // száma szerepeljen!
 
-       res.write("3. feladat:");
-      // 4. Írja a képernyőre azon személyek azonosítóját, akik a vizsgált időszak végén a társalgóban
-      // tartózkodtak! 
+        res.write("3. feladat:");
+        // 4. Írja a képernyőre azon személyek azonosítóját, akik a vizsgált időszak végén a társalgóban
+        // tartózkodtak!
 
-      res.write("4. feladat:");
-      
+        res.write("4. feladat:");
+
         //  5. Hányan voltak legtöbben egyszerre a társalgóban? Írjon a képernyőre egy olyan időpontot
-        //  (óra:perc), amikor a legtöbben voltak bent! 
+        //  (óra:perc), amikor a legtöbben voltak bent!
 
         res.write("5. feladat:");
         res.write(`<p>\t${megold.LegtobbBent}</p>`);
-       
-
-
-
-
-
 
         res.write("</body></html>");
         res.end();
