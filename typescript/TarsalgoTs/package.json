@@ -7,7 +7,7 @@
     },
     "main": "App.js",
     "repository": {
-        "private": true,
+        "private": false,
         "type": "git",
         "url": "https://github.com/HugePVPnis/tarsalgoTs.git"
     },
