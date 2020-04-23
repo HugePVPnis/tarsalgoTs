@@ -34,19 +34,13 @@ export default class Content {
         // A meghatározott értékeket azonosító szerint növekvő sorrendben írja az athaladas.txt
         // fájlba! Soronként egy személy azonosítója, és tőle egy szóközzel elválasztva az áthaladások
         // száma szerepeljen!
-
-        res.write("3. feladat:");
         // 4. Írja a képernyőre azon személyek azonosítóját, akik a vizsgált időszak végén a társalgóban
         // tartózkodtak!
-
-        res.write("4. feladat:");
-        res.write(`<p>\t${megold.Azonos} voltak bent ebben az időben.</p>`);
-
+        //res.write(`<p>\t${megold.Azonos} voltak bent ebben az időben.</p>`);
         //  5. Hányan voltak legtöbben egyszerre a társalgóban? Írjon a képernyőre egy olyan időpontot
         //  (óra:perc), amikor a legtöbben voltak bent!
-
         res.write("5. feladat:");
-        res.write(`<p>\t${megold.LegtobbBent} voltak a legtöbben bent.</p>`);
+        res.write(`<p>${megold.LegtobbBent} voltak a legtöbben bent.</p>`);
 
         res.write("</body></html>");
         res.end();

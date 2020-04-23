@@ -12,16 +12,16 @@ export default class Megoldas {
             });
     }
     public get ElsoId(): string {
-        let ElsoId = "";
+        let ElsoId = 0;
         for (let i = 0; i < this.Tarsak.length; i++) {
-            if (this.Tarsak[i].GetOra == 9 && this.Tarsak[i].GetPerc == 1) ElsoId = this.Tarsak[i].GetKibe;
+            if (this.Tarsak[i].GetOra == 9 && this.Tarsak[i].GetPerc == 1) ElsoId = this.Tarsak[i].GetId;
         }
         return ElsoId.toString();
     }
     public get UtolsoId(): string {
-        let UtoloId = "";
+        let UtoloId = 0;
         for (let i = 0; i < this.Tarsak.length; i++) {
-            if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 59) UtoloId = this.Tarsak[i].GetKibe;
+            if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 59) UtoloId = this.Tarsak[i].GetId;
         }
         return UtoloId.toString();
     }
@@ -34,7 +34,7 @@ export default class Megoldas {
         }
         return count.toString();
     }
-    public get Azonos(): number {
+    /* public get Azonos(): number {
         for (let i = 0; i < this.Tarsak.length; i++) {
             if (this.Tarsak[i].GetOra == 14 && this.Tarsak[i].GetPerc == 35) {
                 i = this.Tarsak.GetId;
@@ -42,4 +42,5 @@ export default class Megoldas {
         }
         return this.Tarsak.GetId;
     }
+    */
 }
