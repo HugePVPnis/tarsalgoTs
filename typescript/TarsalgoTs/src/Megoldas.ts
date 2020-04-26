@@ -49,7 +49,6 @@ export default class Megoldas {
         return azonositok;
     }
     public hetedikfeladat(azon: number): string {
-        // eslint-disable-next-line prefer-const
         let orabe = 0;
         let percbe = 0;
         let oraki = 0;
