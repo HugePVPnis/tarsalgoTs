@@ -49,7 +49,7 @@ export default class Content {
         res.write(`<p>${megold.LegtobbBent}-kor voltak a legtöbben bent.</p>`);
         const azonosító: string = params.azon as string;
         res.write("6. feladat:");
-        // 6. Kérje be a felhasználótól egy személy azonosítóját! A további feladatok megoldásánál ezt használja fel! 
+        // 6. Kérje be a felhasználótól egy személy azonosítóját! A további feladatok megoldásánál ezt használja fel!
         res.write(`\nKérem az azonosítot: <input type='number' name='azon' value=${azonosító} style='max-width:100px;' onChange='this.form.submit();'>\n`);
         res.write(megold.hetedikfeladat(parseInt(azonosító)));
 

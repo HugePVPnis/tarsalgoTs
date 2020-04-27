@@ -1,10 +1,6 @@
 /* eslint-disable prefer-const */
 import fs from "fs";
 import Tars from "./tarsalgo";
-import { AsyncLocalStorage } from "async_hooks";
-import Content from "./Content";
-import { isNullOrUndefined } from "util";
-import { throws } from "assert";
 export default class Megoldas {
     private Tarsak: Tars[] = [];
     constructor(forrás: string) {
